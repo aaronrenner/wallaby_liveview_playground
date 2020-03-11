@@ -20,5 +20,6 @@ config :logger, level: :warn
 config :wallaby_liveview_playground, sql_sandbox: true
 
 config :wallaby,
+  driver: Wallaby.Experimental.Chrome,
   otp_app: :wallaby_liveview_playground,
   screenshot_on_failure: true

@@ -39,12 +39,14 @@ defmodule WallabyLiveviewPlayground.MixProject do
       {:ecto_sql, "~> 3.1"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
+      {:phoenix_live_view, "~> 0.9.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:wallaby,
-       github: "elixir-wallaby/wallaby", branch: "feature-case", only: :test, runtime: false}
+       github: "elixir-wallaby/wallaby", branch: "feature-case", only: :test, runtime: false},
+      {:floki, ">= 0.0.0", only: :test}
     ]
   end
 
