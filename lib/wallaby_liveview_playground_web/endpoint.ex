@@ -1,6 +1,10 @@
 defmodule WallabyLiveviewPlaygroundWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :wallaby_liveview_playground
 
+  if Application.get_env(:wallaby_liveview_playground, :sql_sandbox) do
+    plug Phoenix.Ecto.SQL.Sandbox
+  end
+
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
