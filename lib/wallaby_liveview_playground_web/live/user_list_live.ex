@@ -10,6 +10,7 @@ defmodule WallabyLiveviewPlaygroundWeb.UserListLive do
   end
 
   def mount(_params, _session, socket) do
+    IO.inspect(self(), label: "UserListLive PID")
     users = Accounts.list_users()
     {:ok, assign(socket, :users, users)}
   end
