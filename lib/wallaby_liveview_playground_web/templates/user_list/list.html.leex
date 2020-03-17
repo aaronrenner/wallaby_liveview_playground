@@ -1,0 +1,16 @@
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <tr class="user">
+      <td class="user-name"><%= user.name %></td>
+<% end %>
+  </tbody>
+</table>

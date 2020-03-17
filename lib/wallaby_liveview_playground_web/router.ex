@@ -11,6 +11,10 @@ defmodule WallabyLiveviewPlaygroundWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :liveview do
+    plug :put_root_layout, {WallabyLiveviewPlaygroundWeb.LayoutView, "root.html"}
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -20,6 +24,11 @@ defmodule WallabyLiveviewPlaygroundWeb.Router do
 
     get "/", PageController, :index
     resources "/users", UserController
+  end
+
+  scope "/", WallabyLiveviewPlaygroundWeb do
+    pipe_through [:browser, :liveview]
+    live "/users_live", UserListLive
   end
 
   # Other scopes may use custom stacks.
